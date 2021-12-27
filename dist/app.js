@@ -1,3 +1,4 @@
+"use strict";
 class hero {
     constructor() {
         this.name = "";
@@ -8,12 +9,12 @@ class hero {
             this.hunger--;
             this.log('man mordam', this.hunger);
             if (this.amIDead())
-            this.log("i am dead");
+                this.log("i am dead");
             clearInterval(handler);
         }, 4000);
     }
     set health(input) {
-        this._health = input
+        this._health = input;
     }
     get health() {
         return this.health;
@@ -25,12 +26,10 @@ class hero {
         return this._health <= 0 || this.hunger <= 0;
     }
 }
-
 class archer extends hero {
     attack() {
         this.log("archer attacking");
     }
-
 }
 class knight extends hero {
     constructor(name, sword) {
@@ -38,39 +37,37 @@ class knight extends hero {
         this.sword = 6;
     }
 }
-class soldier extends hero{
-    constructor(name,knight){
-        this.name=name;
-        this.knight=knight;
+class soldier extends hero {
+    constructor(name, knight) {
+        this.name = name;
+        this.knight = knight;
     }
 }
-
-class clan{
-    name = string = "";
-    army = hero[]=[]
-    constructor( name= string ,army = hero[]){
-        this.army=army;
-        this.name=name;
+class clan {
+    constructor(name, army) {
+        this.name = "";
+        this.army = [];
+        this.army = army;
+        this.name = name;
     }
-   attack(enemy){
-       console.log("i am attacking")
-       soldier1.attack(enemy.army[Math.floor(Math.random() * this.army.length)]);
-       enemy.forEach(hero => {
-           hero.attack()
-       });
-   }
+    attack(enemy) {
+        console.log("i am attacking");
+        soldier1.attack(enemy.army[Math.floor(Math.random() * this.army.length)]);
+        enemy.forEach(hero => {
+            hero.attack();
+        });
+    }
 }
-
-const clan =new clan()
-clan1.army.push(new soldier ,new knight)
-const knight1=new knight();
-const knight2=new knight();
-const knight3=new knight();
-const knight4=new knight();
-const soldier1=new soldier();
-const soldier2=new soldier();
-const soldier3=new soldier();
-const soldier4=new soldier();
-const soldier5=new soldier();
-const soldier6=new soldier();
-soldier1.attack(knight1 )
+const clan = new clan();
+clan1.army.push(new soldier, new knight);
+const knight1 = new knight();
+const knight2 = new knight();
+const knight3 = new knight();
+const knight4 = new knight();
+const soldier1 = new soldier();
+const soldier2 = new soldier();
+const soldier3 = new soldier();
+const soldier4 = new soldier();
+const soldier5 = new soldier();
+const soldier6 = new soldier();
+soldier1.attack(knight1);
