@@ -6,13 +6,13 @@ class hero{
     _health:number
     xp:number
     hunger:number
-    debug :Debugger
+    log :debug .Debugger
     constructor() {
         this.name = "";
         this._health = 100;
         this.xp = 2;
         this.hunger = 6;
-        this.log=debug('man mordam ${this.hunger}');     
+        this.log=debug(`man mordam ${this.hunger}`);     
     }
     set health(input) {
         this._health = input
@@ -86,7 +86,7 @@ class hero{
 async function logtest() {
     let i:number=0
     for(i=0 ;i<10 ;i++){
-        generallog('index is ${i}');
+        generallog(`index is ${i}`);
     }
 }
 logtest()
